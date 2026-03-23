@@ -21,7 +21,7 @@ class Solution:
         return True if len(unique) < len(nums) else False
 
 
-# SOLUTION 2
+# SOLUTION 3
 # ------------------ O(n) TC ----------- O(n) SC --------
 
 class Solution:
