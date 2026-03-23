@@ -1,5 +1,5 @@
 # SOLUTION 0
-# ------------------ O(nlogn) TC ----------- O(1) SC --------
+# ------------------ O(nlogn) TC ----------- O(n) SC --------
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -31,12 +31,12 @@ class Solution:
         if len(s) != len(t):
             return False
         freq1 = {}
-        for i in range(len(s)):
-            freq1[s[i]] = freq1.get(s[i], 0) + 1
+        for c in rs:
+            freq1[c] = freq1.get(c, 0) + 1
 
         freq2 = {}
-        for i in range(len(t)):
-            freq2[t[i]] = freq2.get(t[i], 0) + 1
+        for c in t:
+            freq2[c] = freq2.get(c, 0) + 1
 
         return freq1 == freq2
 
@@ -49,19 +49,17 @@ class Solution:
         if len(s) != len(t):
             return False
         freq1 = {}
-        for i in range(len(s)):
-            freq1[s[i]] = freq1.get(s[i], 0) + 1
+        for c in rs:
+            freq1[c] = freq1.get(c, 0) + 1
 
         freq2 = {}
-        for i in range(len(t)):
-            freq2[t[i]] = freq2.get(t[i], 0) + 1
+        for c in t:
+            freq2[c] = freq2.get(c, 0) + 1
 
         for c in s:
             if freq1[c] == freq2.get(c, 0):      # if freq1.get(c, 0) == freq2.get(c, 0):
                 continue
             return False
         return True
-
-
 
 
